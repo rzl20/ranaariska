@@ -1604,7 +1604,12 @@
             document.getElementById('cv-counter-badge').textContent = `(${count} downloads)`;
 
             showToast("cv-dw", "Mengunduh Berkas Portfolio / CV PDF...", "success");
-            
+
+            const link = document.createElement("a");
+            link.href = "https://drive.google.com/uc?export=download&id=1FQXijwdt29oAejVU2XKmtfAb9_62u-Ke";
+            link.target = "_blank";
+            link.click();
+
             // Play success sounds
             if(audioCtx && isMusicPlaying) {
                 // Synthesize short high notification chime sound
