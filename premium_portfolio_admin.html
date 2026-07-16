@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rana Ariska Pratiwi | Creative Talent, Public Speaker, Host, MC & Content Creator</title>
+    
+    <!-- Meta tags for Premium SEO -->
+    <meta name="description" content="Portfolio Premium Rana Ariska Pratiwi - Creative Talent, Public Speaker, Professional MC, Host, and Content Creator. Temukan pengalaman digital, showcase performa panggung, video kreatif, dan sertifikasi profesional.">
+    <meta name="keywords" content="Rana Ariska Pratiwi, Creative Talent, Public Speaker, MC Professional, Host Indonesia, Moderator, Content Creator, Portfolio Premium, Awwwards Portfolio, Talent Creative, Administrative Specialist">
+    <meta name="author" content="Rana Ariska Pratiwi">
+    <meta property="og:title" content="Rana Ariska Pratiwi | Creative Digital Portfolio">
+    <meta property="og:description" content="Explore portfolio interaktif premium seorang talent kreatif multi-talenta.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Space Grotesk (Heading), Satoshi/Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styling Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#7C5CFF',
+                            secondary: '#26D9FF',
+                            accent: '#FF4DA6',
+                            highlight: '#FFE45E',
+                            success: '#00E88F',
+                            dark: '#050816',
+                            mid: '#09122A',
+                            light: '#181C44'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Space Grotesk"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons & GSAP Animation Suite -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* Modern Base Customizations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050816;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(124, 92, 255, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-nav {
+            background: rgba(5, 8, 22, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Aurora Animated Backgrounds */
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: radial-gradient(circle at 10% 20%, rgba(124, 92, 255, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(38, 217, 255, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 77, 166, 0.08) 0%, transparent 60%);
+            filter: blur(80px);
+            animation: auroraMovement 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes auroraMovement {
+            0% { transform: scale(1) translate(0px, 0px); }
+            50% { transform: scale(1.1) translate(30px, -40px); }
+            100% { transform: scale(0.95) translate(-20px, 20px); }
+        }
+
+        /* Ambient Animated Blobs */
+        .floating-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: floatBlob 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
+            50% { transform: rotate(180deg) translate(40px, -60px) scale(1.2); }
+            100% { transform: rotate(360deg) translate(-20px, 20px) scale(0.9); }
+        }
+
+        /* Noise Overlay for Cinematic Texture */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            content: "";
+            opacity: 0.02;
+            z-index: 9999;
+            pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3联%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Dynamic Spotlight Mouse Background */
+        .spotlight {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 92, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: width 0.3s, height 0.3s;
+        }
+
+        /* Custom Premium Cursor */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background: #7C5CFF;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 10000;
+            transition: width 0.1s, height 0.1s, background-color 0.2s;
+        }
+
+        .custom-cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(124, 92, 255, 0.4);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease-out, border-color 0.2s;
+        }
+
+        /* Orbit Simulation Styles */
+        .orbit-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .orbit-circle {
+            position: absolute;
+            border: 1.5px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: spin 40s linear infinite;
+        }
+
+        .orbit-circle-inner {
+            width: 260px;
+            height: 260px;
+            animation: spin-reverse 25s linear infinite;
+        }
+
+        .orbit-circle-outer {
+            width: 420px;
+            height: 420px;
+            animation: spin 50s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin-reverse {
+            100% { transform: rotate(-360deg); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050816;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(124, 92, 255, 0.4);
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(124, 92, 255, 0.7);
+        }
+
+        /* Hide Scrollbar for Infinite Marquees */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Active Timeline styling */
+        .timeline-line-active {
+            background: linear-gradient(90deg, #7C5CFF 0%, #26D9FF 100%);
+            transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Gradient Animation Border class */
+        .animated-border {
+            position: relative;
+            background: linear-gradient(#050816, #050816) padding-box,
+                        linear-gradient(135deg, #7C5CFF, #FF4DA6, #26D9FF) border-box;
+            border: 2px solid transparent;
+        }
+
+        /* Custom Admin Form Toggle Styling */
+        .admin-sidebar-btn.active {
+            background: rgba(124, 92, 255, 0.15);
+            border-left: 4px solid #7C5CFF;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 overflow-x-hidden selection:bg-brand-primary selection:text-white">
+
+    <!-- Custom Cursor & Spotlights -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+    <div class="spotlight" id="mouse-spotlight"></div>
+    <div class="noise-overlay"></div>
+    <div class="aurora-bg"></div>
+
+    <!-- Background Synthesizer Control (Awwwards Easter Egg #1) -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <button id="sound-toggle" class="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 active:scale-95 text-brand-secondary transition" title="Nyalakan Musik Latar Synthesizer">
+            <i class="fa-solid fa-volume-xmark text-lg"></i>
+        </button>
+        <button id="scroll-to-top" class="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 active:scale-95 text-brand-primary opacity-0 pointer-events-none transition" title="Kembali ke atas">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Dynamic Audio Status Indicator -->
+    <div id="sound-toast" class="fixed bottom-20 right-6 z-50 px-4 py-2 bg-brand-dark/90 border border-brand-primary/30 rounded-xl text-xs text-brand-secondary flex items-center gap-2 opacity-0 transform translate-y-2 pointer-events-none transition duration-300">
+        <span class="w-2 h-2 rounded-full bg-brand-secondary animate-ping"></span>
+        <span>Premium ambient music playing... Generated via Web Audio API!</span>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div id="toast-container" class="fixed top-24 right-6 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Splash & Loading Screen -->
+    <div id="splash-screen" class="fixed inset-0 bg-brand-dark z-[10000] flex flex-col items-center justify-center">
+        <div class="relative flex flex-col items-center">
+            <!-- Neon Logo Loading Animation -->
+            <div class="w-24 h-24 rounded-full border-2 border-brand-primary border-t-brand-accent animate-spin mb-6 flex items-center justify-center">
+                <span class="text-2xl font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">R</span>
+            </div>
+            <h1 class="text-3xl font-heading font-bold tracking-widest text-white mb-2">RANA ARISKA</h1>
+            <p class="text-sm font-light tracking-widest text-brand-secondary uppercase animate-pulse">Creative Digital Persona</p>
+            
+            <div class="w-48 h-1 bg-white/10 rounded-full mt-6 overflow-hidden">
+                <div id="loading-bar" class="h-full bg-gradient-to-r from-brand-primary to-brand-accent transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <div id="loading-percentage" class="text-xs text-gray-500 mt-2 font-mono">0%</div>
+        </div>
+    </div>
+
+    <!-- Sticky Glass Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-accent flex items-center justify-center shadow-lg shadow-brand-primary/20 hover:rotate-12 transition duration-300">
+                    <span class="text-white font-heading font-bold text-lg">R</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-heading font-bold text-base leading-none group-hover:text-brand-primary transition">Rana Ariska</span>
+                    <span class="text-[10px] text-gray-400 font-mono tracking-wider">CREATIVE TALENT</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-brand-primary transition duration-300">About</a>
+                <a href="#journey" class="hover:text-brand-primary transition duration-300">Journey</a>
+                <a href="#talent" class="hover:text-brand-primary transition duration-300">Talent Showcase</a>
+                <a href="#projects" class="hover:text-brand-primary transition duration-300">Portfolio</a>
+                <a href="#gallery" class="hover:text-brand-primary transition duration-300">Gallery</a>
+                <a href="#contact" class="hover:text-brand-primary transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Actions Controls -->
+            <div class="flex items-center gap-4">
+                <button id="search-trigger" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-brand-primary hover:text-white transition duration-300" title="Cari Portfolio (Ctrl+K)">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-accent hover:to-brand-primary text-white hover:scale-105 active:scale-95 transition duration-300 shadow-md shadow-brand-primary/10">
+                    Hire Me <i class="fa-solid fa-arrow-right ml-2 animate-bounce-horizontal"></i>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Progress Bar -->
+        <div class="w-full h-[3px] bg-white/5">
+            <div id="scroll-progress" class="h-full bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary" style="width: 0%"></div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-brand-dark/95 border-b border-white/10 backdrop-blur-xl px-6 py-8 flex flex-col gap-5 md:hidden hidden transition duration-300 z-30">
+            <a href="#about" class="text-lg font-heading text-gray-200 hover:text-brand-primary">About Me</a>
+            <a href="#journey" class="text-lg font-heading text-gray-200 hover:text-brand-primary">Journey Timeline</a>
+            <a href="#talent" class="text-lg font-heading text-gray-200 hover:text-brand-primary">Talent Showcase</a>
+            <a href="#projects" class="text-lg font-heading text-gray-200 hover:text-brand-primary">Portfolio</a>
+            <a href="#gallery" class="text-lg font-heading text-gray-200 hover:text-brand-primary">Gallery</a>
+            <a href="#contact" class="text-lg font-heading text-gray-200 hover:text-brand-primary">Contact</a>
+            <a href="#contact" class="w-full text-center py-3 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent font-bold uppercase text-xs tracking-wider">Hire Me Now</a>
+        </div>
+    </header>
+
+    <!-- Premium Command Palette Overlay (CTRL+K) -->
+    <div id="command-palette" class="fixed inset-0 bg-brand-dark/80 backdrop-blur-md z-[60] flex items-start justify-center pt-24 px-4 hidden">
+        <div class="w-full max-w-2xl bg-brand-mid/95 border border-white/10 rounded-2xl shadow-2xl overflow-hidden shadow-brand-primary/10">
+            <div class="p-4 border-b border-white/10 flex items-center gap-3">
+                <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                <input id="palette-search" type="text" placeholder="Search projects, categories, content, skills... (Type 'MC', 'TikTok', 'Digital')" class="w-full bg-transparent border-none text-white focus:outline-none placeholder-gray-500 font-medium">
+                <span class="px-2 py-1 bg-white/10 text-gray-400 text-[10px] font-mono rounded">ESC</span>
+            </div>
+            <!-- Search Results Display -->
+            <div id="palette-results" class="max-h-96 overflow-y-auto p-4 flex flex-col gap-2">
+                <!-- Javascript will load actual items from model -->
+            </div>
+            <div class="p-3 bg-brand-dark/50 border-t border-white/5 text-[11px] text-gray-400 flex items-center justify-between">
+                <span>Use keyboard up/down & Enter to navigate.</span>
+                <span>Type <code class="text-brand-secondary">admin</code> to launch dashboard panel.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Fullscreen Section -->
+    <section class="min-h-screen relative flex items-center pt-28 pb-12 overflow-hidden px-6">
+        <!-- Background elements -->
+        <div class="floating-blob w-[300px] h-[300px] bg-brand-primary top-1/4 left-1/10"></div>
+        <div class="floating-blob w-[400px] h-[400px] bg-brand-accent bottom-10 right-1/10 animate-pulse"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Hero Left Side: Brand Pitching -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left">
+                <!-- Award Banner Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-brand-secondary mb-6 hover:scale-105 transition duration-300">
+                    <span class="w-2 h-2 rounded-full bg-brand-success animate-pulse"></span>
+                    <span>CREATIVE TALENT PORTFOLIO 2026</span>
+                </div>
+
+                <h2 class="text-lg md:text-xl font-mono text-brand-primary mb-3">Hi! Bonjour! Halo!</h2>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-heading font-black tracking-tight leading-none mb-4">
+                    Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary" id="hero-name">Rana Ariska Pratiwi</span>
+                </h1>
+                
+                <!-- Professional Dynamic Typing Text Element -->
+                <div class="h-16 flex items-center mb-6">
+                    <p class="text-2xl md:text-3xl font-heading font-semibold text-gray-300">
+                        A Passionate <span class="text-brand-secondary inline-block" id="typing-text">Creative Talent</span><span class="animate-pulse text-brand-accent">|</span>
+                    </p>
+                </div>
+
+                <p class="text-gray-400 text-base md:text-lg max-w-xl leading-relaxed mb-8">
+                    Menjembatani ide kreatif dengan audiens melalui komunikasi yang interaktif, profesional, dan penuh energi. Berpengalaman luas dalam public speaking, MC formal/non-formal, presenter digital, serta content creation yang autentik.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="#talent" class="px-8 py-4 bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-accent hover:to-brand-primary rounded-xl font-bold tracking-wider text-xs uppercase text-white shadow-xl shadow-brand-primary/30 transition hover:-translate-y-1">
+                        Explore Portfolio
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-white/10 hover:border-brand-primary bg-white/5 rounded-xl font-bold tracking-wider text-xs uppercase text-gray-200 hover:text-white transition hover:-translate-y-1">
+                        Hubungi Saya
+                    </a>
+                    <button onclick="downloadCV()" class="px-6 py-4 bg-transparent text-gray-400 hover:text-brand-secondary flex items-center gap-2 text-xs font-bold uppercase transition">
+                        <i class="fa-solid fa-download"></i> Download CV <span class="text-[10px] text-gray-500 font-mono" id="cv-counter-badge">(0 downloads)</span>
+                    </button>
+                </div>
+
+                <!-- Live Social Indicators Counter (Interactive Numbers) -->
+                <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10 w-full max-w-md">
+                    <div>
+                        <div class="text-2xl md:text-3xl font-heading font-bold text-white count-up" data-target="25000">0</div>
+                        <div class="text-xs text-gray-500 font-mono mt-1">Total Followers</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-3xl font-heading font-bold text-white count-up" data-target="150">0</div>
+                        <div class="text-xs text-gray-500 font-mono mt-1">Events Handled</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-3xl font-heading font-bold text-white count-up" data-target="12">0</div>
+                        <div class="text-xs text-gray-500 font-mono mt-1">Brands Collaborated</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Right Side: Floating Premium Interactive Portrait Frame -->
+            <div class="lg:col-span-5 flex justify-center items-center">
+                <div class="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] flex items-center justify-center">
+                    <!-- Rotating Premium Glowing Rings -->
+                    <div class="absolute inset-0 rounded-full border border-dashed border-brand-primary/30 animate-[spin_60s_linear_infinite]"></div>
+                    <div class="absolute -inset-4 rounded-full border border-dashed border-brand-accent/20 animate-[spin_40s_linear_infinite_reverse]"></div>
+                    <div class="absolute -inset-8 rounded-full border border-dashed border-brand-secondary/15 animate-[spin_80s_linear_infinite]"></div>
+
+                    <!-- Ambient Glow Light Behind the Frame -->
+                    <div class="absolute w-[80%] h-[80%] rounded-full bg-brand-primary/20 filter blur-[50px] animate-pulse"></div>
+
+                    <!-- Master Portrait Image with Border Gradient -->
+                    <div class="relative w-[90%] h-[90%] rounded-2xl overflow-hidden border-2 border-brand-primary shadow-2xl transition hover:scale-105 duration-500 group cursor-pointer" onclick="easterEggConfetti()">
+                        <img id="hero-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Rana Ariska Pratiwi" class="w-full h-full object-cover object-center group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                        
+                        <!-- Floating Micro-Badge Inside Portrait -->
+                        <div class="absolute bottom-4 left-4 right-4 glass-card p-3 flex items-center gap-3">
+                            <span class="w-3 h-3 rounded-full bg-brand-success animate-ping"></span>
+                            <span class="text-xs font-mono font-medium text-gray-200">Kamera Ready &middot; Live Broadcast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section: About Me -->
+    <section id="about" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col items-start mb-16">
+                <span class="text-brand-secondary font-mono text-sm uppercase tracking-wider">// 01 . PERSONALITY MATTERS</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black mt-2">Bento Grid Persona</h2>
+                <div class="w-20 h-1 bg-brand-primary mt-4 rounded"></div>
+            </div>
+
+            <!-- Bento Container Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="bento-container">
+                <!-- Dynamically Rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline Section -->
+    <section id="journey" class="py-24 bg-brand-mid/40 backdrop-blur-3xl px-6 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-16">
+                <span class="text-brand-accent font-mono text-sm uppercase tracking-wider">// 02 . ROAD TO SUCCESS</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black mt-2">Professional Journey</h2>
+                <p class="text-gray-400 mt-4 max-w-xl">Mengintip pertumbuhan, pencapaian, dan perjalanan visioner dari tahun ke tahun.</p>
+            </div>
+
+            <!-- Horizontal Journey Scroll System -->
+            <div class="relative w-full overflow-x-auto py-12 scrollbar-none no-scrollbar" id="journey-scroll-box">
+                <!-- Background Progress Line -->
+                <div class="absolute top-[52px] left-0 right-0 h-1 bg-white/10 rounded">
+                    <div id="timeline-progress" class="h-full bg-gradient-to-r from-brand-primary to-brand-accent transition-all duration-500" style="width: 0%;"></div>
+                </div>
+
+                <!-- Timeline Nodes container -->
+                <div class="flex gap-12 px-6 min-w-max" id="journey-timeline-nodes">
+                    <!-- Loaded dynamically via model array -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Universe Section -->
+    <section id="skills" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side Explanation -->
+            <div class="lg:col-span-5 text-left">
+                <span class="text-brand-primary font-mono text-sm uppercase tracking-wider">// 03 . MY COGNITIVE UNIVERSE</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black mt-2">Skills Orbit</h2>
+                <div class="w-20 h-1 bg-brand-primary mt-4 mb-6 rounded"></div>
+                <p class="text-gray-400 mb-6">
+                    Bukan hanya berbicara, melainkan merangkai komunikasi yang dinamis. Dari panggung formal hingga kreasi konten modern, saya meramu kepribadian, riset mendalam, dan teknologi digital untuk menghadirkan engagement terbaik.
+                </p>
+                <div class="flex flex-wrap gap-2" id="skill-tags-cloud">
+                    <!-- Interactive mini badges -->
+                </div>
+            </div>
+
+            <!-- Right Side Orbit Simulation -->
+            <div class="lg:col-span-7 flex justify-center items-center">
+                <div class="orbit-container">
+                    <!-- Central Portrait Sphere -->
+                    <div class="relative w-24 h-24 rounded-full bg-gradient-to-tr from-brand-primary to-brand-accent p-[2px] z-20 hover:scale-110 transition duration-300">
+                        <div class="w-full h-full rounded-full bg-brand-dark flex items-center justify-center font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary text-base">RANA</div>
+                    </div>
+                    
+                    <!-- Inner Orbit Circle (3 dynamic nodes orbiting) -->
+                    <div class="orbit-circle orbit-circle-inner flex items-center justify-center">
+                        <div class="absolute top-0 -translate-y-4 px-3 py-1 bg-brand-dark/90 border border-brand-primary/40 rounded-full text-[10px] font-mono text-brand-primary">Public Speaking</div>
+                        <div class="absolute bottom-4 left-0 -translate-x-4 px-3 py-1 bg-brand-dark/90 border border-brand-accent/40 rounded-full text-[10px] font-mono text-brand-accent">Broadcasting</div>
+                        <div class="absolute bottom-4 right-0 translate-x-4 px-3 py-1 bg-brand-dark/90 border border-brand-secondary/40 rounded-full text-[10px] font-mono text-brand-secondary">Content Creator</div>
+                    </div>
+
+                    <!-- Outer Orbit Circle (4 dynamic nodes orbiting) -->
+                    <div class="orbit-circle orbit-circle-outer">
+                        <div class="absolute top-0 right-10 px-3 py-1 bg-brand-dark/90 border border-brand-highlight/40 rounded-full text-[10px] font-mono text-brand-highlight">Event Presenter</div>
+                        <div class="absolute bottom-10 left-10 px-3 py-1 bg-brand-dark/90 border border-brand-success/40 rounded-full text-[10px] font-mono text-brand-success">Interpersonal</div>
+                        <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-8 px-3 py-1 bg-brand-dark/90 border border-white/20 rounded-full text-[10px] font-mono text-white">Administration</div>
+                        <div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-8 px-3 py-1 bg-brand-dark/90 border border-brand-primary/30 rounded-full text-[10px] font-mono text-brand-primary">Video Editing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talent Showcase Section (Crucial For Talent Positioning) -->
+    <section id="talent" class="py-24 bg-brand-mid/20 backdrop-blur-3xl px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="flex flex-col items-start">
+                    <span class="text-brand-secondary font-mono text-sm uppercase tracking-wider">// 04 . HIGHLY CURATED WORK</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black mt-2 text-white">Talent Showcase</h2>
+                    <div class="w-20 h-1 bg-brand-secondary mt-4 rounded"></div>
+                </div>
+                <!-- Category Filters for Showcase -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="talent-filter-bar">
+                    <!-- Filter Pill Buttons will load dynamically -->
+                </div>
+            </div>
+
+            <!-- Showcase Netflix-Style Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="talent-grid">
+                <!-- Cards Loaded by Data Source -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorite Projects Section -->
+    <section id="projects" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-start mb-16">
+                <span class="text-brand-primary font-mono text-sm uppercase tracking-wider">// 05 . CAMPAIGNS & DIGITAL WORKS</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black mt-2">Projects & Campaigns</h2>
+                <div class="w-20 h-1 bg-brand-primary mt-4 rounded"></div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+                <!-- Javascript maps data -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pinterest Style Photo Gallery -->
+    <section id="gallery" class="py-24 bg-brand-mid/40 backdrop-blur-2xl px-6 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div class="flex flex-col items-start">
+                    <span class="text-brand-accent font-mono text-sm uppercase tracking-wider">// 06 . VISUAL MOMENTS</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black mt-2">Creative Gallery</h2>
+                    <div class="w-20 h-1 bg-brand-accent mt-4 rounded"></div>
+                </div>
+                <!-- Gallery filters -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="gallery-filter-bar">
+                    <button class="px-5 py-2 rounded-full text-xs font-semibold bg-brand-accent text-white" onclick="filterGallery('all')">All</button>
+                    <button class="px-5 py-2 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300" onclick="filterGallery('onstage')">On-Stage</button>
+                    <button class="px-5 py-2 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300" onclick="filterGallery('backstage')">Backstage</button>
+                    <button class="px-5 py-2 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300" onclick="filterGallery('studio')">Studio Shoot</button>
+                </div>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4" id="gallery-masonry-container">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience, Credentials & Achievements Grid -->
+    <section id="credentials" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Side: Interactive Experience Cards -->
+            <div class="lg:col-span-7">
+                <div class="flex flex-col items-start mb-10">
+                    <span class="text-brand-primary font-mono text-sm uppercase tracking-wider">// 07 . PREVIOUS ROLES</span>
+                    <h2 class="text-3xl font-heading font-black mt-2">Job Milestones</h2>
+                </div>
+                
+                <div class="flex flex-col gap-4" id="experience-accordion">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+
+            <!-- Right Side: Certificates & Credentials -->
+            <div class="lg:col-span-5">
+                <div class="flex flex-col items-start mb-10">
+                    <span class="text-brand-secondary font-mono text-sm uppercase tracking-wider">// 08 . VERIFIED EXCELLENCE</span>
+                    <h2 class="text-3xl font-heading font-black mt-2">Certifications</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="certificates-container">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-brand-mid/30 backdrop-blur-3xl px-6 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-16">
+                <span class="text-brand-accent font-mono text-sm uppercase tracking-wider">// 09 . VOICES OF TRUST</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black mt-2 text-white">Client Testimonials</h2>
+                <div class="w-16 h-1 bg-brand-accent mt-4 rounded"></div>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="relative min-h-[250px] flex flex-col items-center justify-center text-center px-4" id="testimonials-box">
+                <!-- Javascript will render testmonial dynamically and swap with smooth slide -->
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="flex justify-center gap-4 mt-8">
+                <button onclick="prevTestimonial()" class="w-10 h-10 rounded-full border border-white/10 hover:border-brand-accent flex items-center justify-center text-gray-300 hover:text-brand-accent transition">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="nextTestimonial()" class="w-10 h-10 rounded-full border border-white/10 hover:border-brand-accent flex items-center justify-center text-gray-300 hover:text-brand-accent transition">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Social Links Section -->
+    <section id="contact" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Details & Social Matrix -->
+                <div class="lg:col-span-5">
+                    <span class="text-brand-primary font-mono text-sm uppercase tracking-wider">// 10 . START COLLABORATING</span>
+                    <h2 class="text-4xl font-heading font-black text-white mt-2 mb-6">Let's Create Magic!</h2>
+                    <p class="text-gray-400 mb-8 max-w-sm">Tertarik bekerjasama untuk memandu event, endorsement, kampanye brand, atau posisi kreatif jangka panjang? Hubungi saya hari ini!</p>
+                    
+                    <div class="flex flex-col gap-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/20">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-mono">EMAIL ME</div>
+                                <a href="mailto:rana.ariska@creative.com" class="text-sm font-semibold text-white hover:text-brand-primary transition" id="contact-email">rana.ariska@creative.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-success/10 flex items-center justify-center text-brand-success border border-brand-success/20 animate-pulse">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-mono">WHATSAPP CHAT</div>
+                                <a href="https://wa.me/6281234567890" target="_blank" onclick="trackWhatsAppClick()" class="text-sm font-semibold text-white hover:text-brand-success transition" id="contact-phone">+62 812-3456-7890</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connect Link Grid -->
+                    <h3 class="text-xs font-mono tracking-widest text-gray-500 uppercase mb-4">SOCIAL DIRECTORIES</h3>
+                    <div class="flex gap-3" id="social-grid-elements">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right Side Interactive Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="portfolio-contact-form" onsubmit="handleContactSubmit(event)" class="glass-card p-8 flex flex-col gap-6 relative">
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Send a Secure message</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-xs font-mono text-gray-400">Nama Lengkap</label>
+                                <input required type="text" name="client_name" placeholder="John Doe" class="w-full bg-white/5 focus:bg-white/10 border border-white/10 focus:border-brand-primary rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition">
+                            </div>
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-xs font-mono text-gray-400">Email Instansi / Personal</label>
+                                <input required type="email" name="client_email" placeholder="john@company.com" class="w-full bg-white/5 focus:bg-white/10 border border-white/10 focus:border-brand-primary rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Kategori Kerjasama</label>
+                            <select name="collab_type" class="w-full bg-brand-mid focus:bg-white/10 border border-white/10 focus:border-brand-primary rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition">
+                                <option value="MC / Hosting">Master of Ceremony / Event Hosting</option>
+                                <option value="Content Creator Collaboration">Content Creation (TikTok, IG, YT)</option>
+                                <option value="Public Speaking / Workshop">Speaker / Panelis / Moderator</option>
+                                <option value="Fulltime Job / Project">Administrative Specialist / Corporate</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Deskripsi Ringkas Kolaborasi / Detail Acara</label>
+                            <textarea required name="client_message" rows="4" placeholder="Halo Rana, kami tertarik bekerjasama untuk event brand kami..." class="w-full bg-white/5 focus:bg-white/10 border border-white/10 focus:border-brand-primary rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-accent hover:to-brand-primary font-bold tracking-wider text-xs uppercase text-white shadow-xl shadow-brand-primary/20 hover:scale-[1.02] active:scale-[0.98] transition">
+                            Send Secure Handshake <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section with Secret Portal Integration -->
+    <footer class="py-12 bg-black border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-brand-primary animate-pulse"></span>
+                <span class="text-xs font-mono text-gray-500">Visitor Engine Active: <span id="visitor-count" class="text-brand-secondary font-bold">104</span> sessions tracked today</span>
+            </div>
+
+            <!-- Secret Admin Gate: Triple Click the Copyright triggers popup! -->
+            <div class="text-xs text-gray-500 select-none">
+                <span id="secret-gate-text" class="cursor-pointer hover:text-brand-secondary transition duration-300">
+                    Copyright &copy; 2026 Rana Ariska Pratiwi. All Rights Reserved.
+                </span>
+            </div>
+
+            <div class="flex gap-4 text-xs text-gray-500 font-mono">
+                <a href="#" class="hover:text-brand-primary transition">Privacy Policy</a>
+                <span>&middot;</span>
+                <a href="#" class="hover:text-brand-primary transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Player Popup Modal -->
+    <div id="video-modal" class="fixed inset-0 bg-black/95 z-[999] flex items-center justify-center p-4 hidden">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl" id="video-modal-viewport">
+            <!-- Simulated iframe / player goes here -->
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/95 z-[999] flex items-center justify-center p-4 hidden" onclick="closeLightboxModal()">
+        <button class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center text-xl">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain">
+    </div>
+
+    <!-- Administrative Login Dialogue -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex items-center justify-center p-4 hidden">
+        <div class="w-full max-w-sm glass-card p-8 flex flex-col gap-6 relative">
+            <button onclick="closeAdminLogin()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-lock text-lg"></i>
+                </div>
+                <h3 class="text-lg font-heading font-bold text-white">Security Verification</h3>
+                <p class="text-xs text-gray-400 mt-1">Sistem Otentikasi Administrator Google Apps Script</p>
+            </div>
+            
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono text-gray-400">PIN AKSES</label>
+                <input id="admin-pass-input" type="password" placeholder="••••" class="w-full text-center tracking-widest bg-white/5 border border-white/10 rounded-xl py-3 text-lg text-white focus:outline-none focus:border-brand-primary">
+            </div>
+
+            <button onclick="validateAdminPin()" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent font-bold uppercase tracking-wider text-xs">
+                MASUK DASHBOARD
+            </button>
+        </div>
+    </div>
+
+    <!-- Full-scale Dashboard Overlay Modal -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 bg-brand-dark z-[110] flex hidden overflow-hidden">
+        
+        <!-- Sidebar Navigation -->
+        <div class="w-64 bg-brand-mid/90 border-r border-white/10 flex flex-col shrink-0">
+            <div class="p-6 border-b border-white/10 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center">
+                    <i class="fa-solid fa-sliders text-white text-xs"></i>
+                </div>
+                <div>
+                    <h2 class="text-sm font-heading font-bold text-white leading-none">Console Room</h2>
+                    <span class="text-[10px] text-brand-secondary font-mono">GAS Live Engine</span>
+                </div>
+            </div>
+
+            <!-- Tab Switchers -->
+            <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-1.5" id="admin-sidebar-menu">
+                <button class="admin-sidebar-btn active px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('hero')">
+                    <i class="fa-solid fa-house"></i> Edit Hero Section
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('about')">
+                    <i class="fa-solid fa-address-card"></i> Bento About
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('journey')">
+                    <i class="fa-solid fa-timeline"></i> Journey Path
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('talent')">
+                    <i class="fa-solid fa-play"></i> Talent Showcase
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('projects')">
+                    <i class="fa-solid fa-folder-open"></i> Favorite Projects
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('gallery')">
+                    <i class="fa-solid fa-image"></i> Media Gallery
+                </button>
+                <button class="admin-sidebar-btn px-4 py-3 text-left rounded-xl text-xs font-semibold flex items-center gap-3" onclick="switchDashboardTab('backup')">
+                    <i class="fa-solid fa-database"></i> Backup & GAS Core
+                </button>
+            </div>
+
+            <div class="p-4 border-t border-white/10 flex flex-col gap-2">
+                <button onclick="closeAdminDashboard()" class="w-full py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-lg text-xs font-bold uppercase border border-white/10">
+                    Exit Console
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Working Area -->
+        <div class="flex-1 flex flex-col overflow-hidden bg-[#02050E]">
+            <!-- Header bar inside dashboard -->
+            <div class="h-16 border-b border-white/10 flex items-center justify-between px-8">
+                <h2 class="text-sm font-semibold text-white uppercase tracking-wider" id="dash-panel-title">Edit Hero Section</h2>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs text-gray-500 font-mono">Status: <strong class="text-brand-success">GAS Connected (Demo Mode)</strong></span>
+                    <button onclick="saveAdminData()" class="px-5 py-2 rounded-lg bg-gradient-to-r from-brand-primary to-brand-accent hover:scale-105 transition text-xs font-bold text-white">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Perubahan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area inside dashboard -->
+            <div class="flex-1 overflow-y-auto p-8" id="dash-content-pane">
+                <!-- Javascript dynamically renders different forms based on active tab -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE DATA SOURCE & INTERACTIVE MOTOR SYSTEM -->
+    <script>
+        /*
+            MASTER CONTROLLER - Rana Ariska Pratiwi Portfolio 2026
+            Written with advanced GSAP animations, sound synthesize system, 
+            local storage state replication, and responsive interface support.
+        */
+
+        // Initial default high-fidelity dataset
+        const DEFAULT_PORTFOLIO_DATA = {
+            hero: {
+                name: "Rana Ariska Pratiwi",
+                taglines: ["Creative Talent", "Public Speaker", "Content Creator", "Volunteer", "Administrative Specialist"],
+                about_pitch: "Menjembatani ide kreatif dengan audiens melalui komunikasi yang interaktif, profesional, dan penuh energi. Berpengalaman luas dalam public speaking, MC formal/non-formal, presenter digital, serta content creation yang autentik.",
+                hero_image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
+                whatsapp: "6281234567890",
+                email: "rana.ariska@creative.com"
+            },
+            bento: [
+                {
+                    title: "Who Am I",
+                    subtitle: "Rana Ariska Pratiwi",
+                    description: "Seorang lulusan Administrasi Bisnis yang berkarir di industri kreatif. Memiliki antusiasme tinggi pada public speaking, content creation, dan pemberdayaan sosial.",
+                    size: "col-span-1 md:col-span-2",
+                    icon: "fa-regular fa-user"
+                },
+                {
+                    title: "Vision",
+                    subtitle: "Empower & Inspire",
+                    description: "Menjadi jembatan komunikasi digital yang menginspirasi, memberdayakan komunitas lokal, serta menyajikan nilai profesionalisme tinggi dalam setiap proyek panggung dan administratif.",
+                    size: "col-span-1",
+                    icon: "fa-regular fa-eye"
+                },
+                {
+                    title: "Administrative Excellence",
+                    subtitle: "Details Matter",
+                    description: "Mahir dalam pengaturan jadwal, manajemen data, kearsipan perkantoran, dan optimasi operasional administratif agar selaras dengan ritme industri yang bergerak cepat.",
+                    size: "col-span-1",
+                    icon: "fa-solid fa-briefcase"
+                },
+                {
+                    title: "Voice Mastery & Presentation",
+                    subtitle: "Voice of Brand",
+                    description: "Menguasai intonasi, artikulasi, dan teknik olah vokal untuk memandu acara besar, menjadi voice over, moderator forum bisnis, hingga pembicara edukasi digital.",
+                    size: "col-span-1 md:col-span-2",
+                    icon: "fa-solid fa-microphone"
+                }
+            ],
+            journey: [
+                { year: "2022", title: "Corporate Admin", desc: "Mengelola logistik administratif, pengaturan agenda, dan negosiasi internal perusahaan ritel nasional." },
+                { year: "2023", title: "Public Speaker Launch", desc: "Memulai debut MC formal dan memandu lebih dari 50+ event regional, seminar, serta wedding." },
+                { year: "2025", title: "Content Pioneer", desc: "Membangun personal branding di TikTok & Instagram dengan engagement rate menembus 8.5%." },
+                { year: "2026", title: "The Next Move", desc: "Memperluas keahlian ke arah brand representation, UGC (User Generated Content) Creator, dan digital administrative." }
+            ],
+            skills: [
+                "Public Speaking", "Host / Presenting", "Moderator", "Corporate Administration", 
+                "Video Editing (CapCut)", "UGC Production", "Public Relations", "Social Media Strategy"
+            ],
+            talent: [
+                {
+                    id: 1,
+                    title: "Formal MC - Gala Seminar Nasional",
+                    category: "MC",
+                    video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    thumbnail: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=400",
+                    desc: "Memandu seminar nasional yang dihadiri oleh jajaran kementerian dan delegasi mahasiswa se-Indonesia."
+                },
+                {
+                    id: 2,
+                    title: "Bincang Brand - Product Launch Host",
+                    category: "Host",
+                    video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    thumbnail: "https://images.unsplash.com/photo-1460881680858-30d872d5b530?auto=format&fit=crop&q=80&w=400",
+                    desc: "Menjadi host untuk peluncuran lini kosmetik lokal dengan nuansa panggung yang meriah dan penuh energi."
+                },
+                {
+                    id: 3,
+                    title: "TikTok Challenge Creator - Engagement Camp",
+                    category: "TikTok",
+                    video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                    thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=400",
+                    desc: "Konten video edukasi gaya hidup santai yang menghasilkan 100k+ penayangan organik dalam waktu 48 jam."
+                }
+            ],
+            projects: [
+                {
+                    title: "E-Commerce UGC Campaign",
+                    subtitle: "User Generated Content Strategy",
+                    desc: "Memproduksi serangkaian materi video review produk kecantikan dengan konversi penjualan yang meningkat hingga 24%.",
+                    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+                },
+                {
+                    title: "Digital Admin Transformation",
+                    subtitle: "Internal Operations",
+                    desc: "Merancang otomatisasi spreadsheet dan pengelolaan cloud drive untuk merampingkan proses pelaporan logistik hingga 30%.",
+                    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600"
+                }
+            ],
+            gallery: [
+                { id: 1, category: "onstage", caption: "Live Host - Festival Seni Budaya", src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600" },
+                { id: 2, category: "backstage", caption: "Briefing Santai dengan Panelis", src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600" },
+                { id: 3, category: "studio", caption: "Premium Portrait Shot - Red Suit", src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600" },
+                { id: 4, category: "onstage", caption: "Moderator Dialog Pemuda Kreatif", src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=600" }
+            ],
+            experience: [
+                { title: "Lead Creative Planner", company: "Spark Agency", years: "2024 - Sekarang", bullet: "Menyusun blueprint promosi kreatif, bekerjasama dengan 20+ KOL nasional, dan merangkap sebagai in-house talent." },
+                { title: "Senior Business Secretary", company: "Global Trading Corp", years: "2021 - 2023", bullet: "Mengatur administrasi eksekutif, asisten langsung jajaran Direksi, menyusun memo, riset data, serta pembukuan keuangan internal." }
+            ],
+            certificates: [
+                { title: "Professional Public Speaking Certificate", issuer: "LSPR Communication Academy", file: "#" },
+                { title: "Advanced Google Workspace Specialist", issuer: "Coursera Credentials", file: "#" }
+            ],
+            testimonials: [
+                { name: "Andini Putri", role: "Event Director, Spark Fest", quote: "Rana memiliki energi panggung yang luar biasa! Ia sangat cekatan meredam kepanikan saat terjadi kendala teknis dan menjaga audiens tetap terhibur." },
+                { name: "Hendrik Gunawan", role: "CEO, Global Trading", quote: "Rana adalah sosok administratif yang sangat andal dan kreatif. Administrasi terdokumentasi dengan sangat rapi sejak ia memegang kendali sistem berkas." }
+            ]
+        };
+
+        // Application State Management
+        let appData = {};
+        let testimonialIndex = 0;
+        let secretClicks = 0;
+        let adminTab = 'hero';
+
+        // Initialize state either from LocalStorage or Fallback Defaults
+        function initState() {
+            const cached = localStorage.getItem('rana_portfolio_state_2026');
+            if (cached) {
+                try {
+                    appData = JSON.parse(cached);
+                } catch(e) {
+                    appData = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA));
+                }
+            } else {
+                appData = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA));
+            }
+
+            // Sync state counters
+            if(!localStorage.getItem('stat_visitor')) localStorage.setItem('stat_visitor', "104");
+            if(!localStorage.getItem('stat_cv')) localStorage.setItem('stat_cv', "0");
+            
+            document.getElementById('visitor-count').textContent = localStorage.getItem('stat_visitor');
+            document.getElementById('cv-counter-badge').textContent = `(${localStorage.getItem('stat_cv')} downloads)`;
+        }
+
+        // Premium Audio Synthesis: Beautiful Synth Ambient Pad via Web Audio API (Easter Egg #1)
+        let audioCtx = null;
+        let audioOsc1 = null;
+        let audioOsc2 = null;
+        let audioGain = null;
+        let isMusicPlaying = false;
+
+        function toggleAmbientMusic() {
+            if (!audioCtx) {
+                try {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Master Gain
+                    audioGain = audioCtx.createGain();
+                    audioGain.gain.setValueAtTime(0, audioCtx.currentTime);
+                    audioGain.connect(audioCtx.destination);
+
+                    // Low Drone Oscillator (Warm Pad)
+                    audioOsc1 = audioCtx.createOscillator();
+                    audioOsc1.type = 'sawtooth';
+                    audioOsc1.frequency.setValueAtTime(110, audioCtx.currentTime); // A2 Note
+                    
+                    // Bandpass filter to make it soft and warm
+                    const filter = audioCtx.createBiquadFilter();
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(180, audioCtx.currentTime);
+                    
+                    // Connect Drone
+                    audioOsc1.connect(filter);
+                    filter.connect(audioGain);
+
+                    // Minor Chord harmony generator
+                    audioOsc2 = audioCtx.createOscillator();
+                    audioOsc2.type = 'triangle';
+                    audioOsc2.frequency.setValueAtTime(138.59, audioCtx.currentTime); // C#3
+                    
+                    audioOsc2.connect(filter);
+
+                    audioOsc1.start();
+                    audioOsc2.start();
+
+                    // Soft pulse LFO to simulate breathing synthesizer
+                    const lfo = audioCtx.createOscillator();
+                    lfo.frequency.setValueAtTime(0.2, audioCtx.currentTime);
+                    const lfoGain = audioCtx.createGain();
+                    lfoGain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+                    lfo.connect(lfoGain);
+                    lfoGain.connect(audioGain.gain);
+                    lfo.start();
+
+                } catch(e) {
+                    console.error("Audio API is blocked by policy", e);
+                    showToast("audio-err", "Audio system not supported or blocked.", "error");
+                    return;
+                }
+            }
+
+            const btn = document.getElementById('sound-toggle');
+            const toast = document.getElementById('sound-toast');
+
+            if (!isMusicPlaying) {
+                // Resume Audio Context if suspended
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                // Fade-In sound
+                audioGain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 3);
+                btn.innerHTML = '<i class="fa-solid fa-volume-high text-lg"></i>';
+                btn.classList.add('animate-pulse');
+                toast.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
+                isMusicPlaying = true;
+            } else {
+                // Fade-Out sound
+                audioGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+                btn.innerHTML = '<i class="fa-solid fa-volume-xmark text-lg"></i>';
+                btn.classList.remove('animate-pulse');
+                toast.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+                isMusicPlaying = false;
+            }
+        }
+
+        // Custom interactive cursor, mouse Spotlight tracking, and scroll feedback
+        function initSensoryFeatures() {
+            const cursor = document.getElementById('cursor');
+            const outline = document.getElementById('cursor-outline');
+            const spotlight = document.getElementById('mouse-spotlight');
+
+            // Robust safety checks to prevent Style property crashes
+            if (!cursor || !outline || !spotlight) {
+                console.warn("Sensory cursor elements not found in DOM. Custom cursor disabled safely.");
+                return;
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                // Cursor coordinates
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+
+                // Spotlight coordinates
+                spotlight.style.left = e.clientX + 'px';
+                spotlight.style.top = e.clientY + 'px';
+
+                // Smooth out outline cursor using delay transition
+                outline.animate({
+                    left: `${e.clientX}px`,
+                    top: `${e.clientY}px`
+                }, { duration: 150, fill: "forwards" });
+            });
+
+            // Enlarge cursor when hovering interactive elements
+            const targets = document.querySelectorAll('a, button, input, select, textarea, [onclick]');
+            targets.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
+                    cursor.style.backgroundColor = '#FF4DA6';
+                    outline.style.borderColor = '#26D9FF';
+                    outline.style.transform = 'translate(-50%, -50%) scale(1.3)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursor.style.backgroundColor = '#7C5CFF';
+                    outline.style.borderColor = 'rgba(124, 92, 255, 0.4)';
+                    outline.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
+
+            // Scroll position tracking for progress indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + "%";
+
+                // Back to Top button visibility control
+                const topBtn = document.getElementById('scroll-to-top');
+                if (winScroll > 300) {
+                    topBtn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    topBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            // Back to top click event listener
+            document.getElementById('scroll-to-top').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Sound Toggle Activation
+            document.getElementById('sound-toggle').addEventListener('click', toggleAmbientMusic);
+        }
+
+        // Custom high-speed typing animation sequence
+        function initTypingEngine() {
+            const element = document.getElementById('typing-text');
+            const words = appData.hero.taglines;
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let delay = 150;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                if (isDeleting) {
+                    element.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    delay = 50;
+                } else {
+                    element.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    delay = 120;
+                }
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    delay = 2000; // Hold word
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    delay = 500; // Breath pause
+                }
+
+                setTimeout(type, delay);
+            }
+            type();
+        }
+
+        // Global beautiful alerts
+        function showToast(id, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.id = id;
+            
+            let color = 'border-brand-primary text-white bg-brand-dark/95';
+            let icon = '<i class="fa-solid fa-circle-check text-brand-primary"></i>';
+            if(type === 'error') {
+                color = 'border-brand-accent text-white bg-brand-dark/95';
+                icon = '<i class="fa-solid fa-circle-exclamation text-brand-accent"></i>';
+            }
+
+            toast.className = `p-4 border rounded-2xl shadow-xl flex items-center gap-3 min-w-[280px] pointer-events-auto transform translate-x-12 opacity-0 transition duration-300 ${color}`;
+            toast.innerHTML = `
+                ${icon}
+                <span class="text-xs font-semibold">${message}</span>
+            `;
+
+            container.appendChild(toast);
+            
+            // Trigger animation frame delay
+            setTimeout(() => {
+                toast.classList.remove('translate-x-12', 'opacity-0');
+            }, 50);
+
+            // Self cleanup duration
+            setTimeout(() => {
+                toast.classList.add('translate-x-12', 'opacity-0');
+                setTimeout(() => { toast.remove(); }, 300);
+            }, 3500);
+        }
+
+        // Dynamic Content Rendering Engine
+        function renderBentoGrid() {
+            const container = document.getElementById('bento-container');
+            container.innerHTML = '';
+            appData.bento.forEach(item => {
+                container.innerHTML += `
+                    <div class="glass-card p-8 flex flex-col items-start ${item.size} group relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary text-xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="${item.icon}"></i>
+                        </div>
+                        <span class="text-xs font-mono text-brand-secondary uppercase">${item.subtitle}</span>
+                        <h3 class="text-xl font-heading font-bold text-white mt-1 mb-3">${item.title}</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">${item.description}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function renderTimeline() {
+            const container = document.getElementById('journey-timeline-nodes');
+            container.innerHTML = '';
+            appData.journey.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="w-72 flex flex-col items-start relative group cursor-pointer" onclick="activateTimelineStep(${index})">
+                        <!-- Connecting Node Dot -->
+                        <div class="w-6 h-6 rounded-full border-4 border-brand-dark bg-gray-600 group-hover:bg-brand-primary transition z-10 timeline-indicator-node" style="margin-left: 20px;"></div>
+                        
+                        <div class="mt-6 pl-5 border-l border-white/5 group-hover:border-brand-primary transition duration-300">
+                            <span class="text-3xl font-heading font-black text-brand-secondary">${item.year}</span>
+                            <h4 class="text-base font-bold text-white mt-1 mb-2">${item.title}</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">${item.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            activateTimelineStep(1); // Set default active
+        }
+
+        function activateTimelineStep(index) {
+            const total = appData.journey.length;
+            const progress = (index / (total - 1)) * 100;
+            document.getElementById('timeline-progress').style.width = progress + '%';
+            
+            // Style nodes
+            const nodes = document.querySelectorAll('.timeline-indicator-node');
+            nodes.forEach((node, i) => {
+                if(i <= index) {
+                    node.classList.remove('bg-gray-600');
+                    node.classList.add('bg-brand-accent');
+                } else {
+                    node.classList.add('bg-gray-600');
+                    node.classList.remove('bg-brand-accent');
+                }
+            });
+        }
+
+        // Showcase engine supporting custom videos
+        function renderTalentShowcase(filter = 'all') {
+            const grid = document.getElementById('talent-grid');
+            grid.innerHTML = '';
+            
+            // Filter list items
+            const filtered = filter === 'all' ? appData.talent : appData.talent.filter(t => t.category.toLowerCase() === filter.toLowerCase());
+            
+            if(filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-20 flex flex-col items-center justify-center text-center opacity-80">
+                        <i class="fa-regular fa-folder-open text-4xl text-gray-600 mb-4 animate-bounce"></i>
+                        <p class="text-sm font-semibold text-gray-500">No showcase matches this category yet.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                grid.innerHTML += `
+                    <div class="glass-card group overflow-hidden flex flex-col relative">
+                        <!-- Thumbnail Wrapper with scale effect -->
+                        <div class="relative aspect-video w-full overflow-hidden bg-black cursor-pointer" onclick="launchVideoModal('${item.video_url}')">
+                            <img src="${item.thumbnail}" alt="${item.title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            <!-- Play Badge Overlay -->
+                            <div class="absolute inset-0 bg-brand-dark/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <div class="w-14 h-14 rounded-full bg-brand-primary/90 text-white flex items-center justify-center shadow-lg shadow-brand-primary/30 transform scale-75 group-hover:scale-100 transition duration-300">
+                                    <i class="fa-solid fa-play text-lg ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Body Details -->
+                        <div class="p-6 flex-1 flex flex-col">
+                            <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-mono text-brand-secondary w-max uppercase">${item.category}</span>
+                            <h3 class="text-lg font-heading font-bold text-white mt-3 mb-2">${item.title}</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed flex-1">${item.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Render category filters programmatically
+        function renderTalentFilters() {
+            const container = document.getElementById('talent-filter-bar');
+            
+            // Extract unique categories
+            const categories = ['all', ...new Set(appData.talent.map(t => t.category))];
+            
+            container.innerHTML = '';
+            categories.forEach(cat => {
+                const isActive = cat === 'all' ? 'bg-brand-secondary text-brand-dark' : 'bg-white/5 hover:bg-white/10 text-gray-300';
+                container.innerHTML += `
+                    <button class="talent-filter-btn px-4 py-2 rounded-full text-xs font-semibold capitalize transition ${isActive}" onclick="filterTalentCategory('${cat}', this)">
+                        ${cat}
+                    </button>
+                `;
+            });
+        }
+
+        function filterTalentCategory(category, element) {
+            // Remove active classes
+            document.querySelectorAll('.talent-filter-btn').forEach(btn => {
+                btn.className = 'talent-filter-btn px-4 py-2 rounded-full text-xs font-semibold capitalize transition bg-white/5 hover:bg-white/10 text-gray-300';
+            });
+            // Add active
+            element.className = 'talent-filter-btn px-4 py-2 rounded-full text-xs font-semibold capitalize transition bg-brand-secondary text-brand-dark';
+            renderTalentShowcase(category);
+        }
+
+        // Render Projects grid
+        function renderProjects() {
+            const container = document.getElementById('projects-grid');
+            container.innerHTML = '';
+            appData.projects.forEach(proj => {
+                container.innerHTML += `
+                    <div class="glass-card overflow-hidden group flex flex-col sm:flex-row items-stretch">
+                        <div class="w-full sm:w-1/2 aspect-square relative overflow-hidden">
+                            <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="w-full sm:w-1/2 p-6 flex flex-col justify-center">
+                            <span class="text-[10px] font-mono text-brand-accent uppercase tracking-wider">${proj.subtitle}</span>
+                            <h3 class="text-xl font-heading font-bold text-white mt-1 mb-3">${proj.title}</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">${proj.desc}</p>
+                            <a href="#contact" class="text-xs font-bold text-brand-primary flex items-center gap-2 hover:text-brand-accent transition">
+                                Let's Discuss <i class="fa-solid fa-arrow-trend-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Render Skill Cloud tags
+        function renderSkillCloud() {
+            const container = document.getElementById('skill-tags-cloud');
+            container.innerHTML = '';
+            appData.skills.forEach(skill => {
+                container.innerHTML += `
+                    <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-brand-primary text-xs font-mono text-gray-300 hover:text-white transition duration-300 cursor-pointer">
+                        ${skill}
+                    </span>
+                `;
+            });
+        }
+
+        // Render Pinterest Masonry Gallery
+        function renderGallery(filter = 'all') {
+            const container = document.getElementById('gallery-masonry-container');
+            container.innerHTML = '';
+            const filtered = filter === 'all' ? appData.gallery : appData.gallery.filter(g => g.category.toLowerCase() === filter.toLowerCase());
+
+            filtered.forEach(item => {
+                container.innerHTML += `
+                    <div class="break-inside-avoid relative rounded-2xl overflow-hidden group border border-white/5 shadow-lg bg-brand-mid/50 cursor-pointer" onclick="launchLightbox('${item.src}')">
+                        <img src="${item.src}" alt="${item.caption}" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500">
+                        <!-- Glass overlay caption -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
+                            <span class="text-[9px] font-mono text-brand-accent capitalize mb-1">${item.category}</span>
+                            <h4 class="text-xs font-bold text-white leading-tight">${item.caption}</h4>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterGallery(category) {
+            renderGallery(category);
+        }
+
+        // Render Work Experiences Accordions
+        function renderExperience() {
+            const container = document.getElementById('experience-accordion');
+            container.innerHTML = '';
+            appData.experience.forEach((job, index) => {
+                const isOpen = index === 0 ? '' : 'hidden';
+                const angleIcon = index === 0 ? 'fa-angle-up' : 'fa-angle-down';
+                container.innerHTML += `
+                    <div class="glass-card p-6 flex flex-col gap-3">
+                        <div class="flex items-center justify-between cursor-pointer" onclick="toggleAccordion(this)">
+                            <div>
+                                <h3 class="text-lg font-heading font-bold text-white leading-tight">${job.title}</h3>
+                                <span class="text-xs font-mono text-brand-primary">${job.company} &middot; <strong class="text-gray-400 font-light">${job.years}</strong></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid ${angleIcon} accordion-angle"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-body border-t border-white/5 pt-4 text-xs text-gray-400 leading-relaxed ${isOpen}">
+                            ${job.bullet}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function toggleAccordion(header) {
+            const parent = header.parentElement;
+            const body = parent.querySelector('.accordion-body');
+            const icon = parent.querySelector('.accordion-angle');
+            
+            if(body.classList.contains('hidden')) {
+                body.classList.remove('hidden');
+                icon.className = 'fa-solid fa-angle-up accordion-angle';
+            } else {
+                body.className = 'accordion-body border-t border-white/5 pt-4 text-xs text-gray-400 leading-relaxed hidden';
+                icon.className = 'fa-solid fa-angle-down accordion-angle';
+            }
+        }
+
+        // Render Verification Certificates
+        function renderCertificates() {
+            const container = document.getElementById('certificates-container');
+            container.innerHTML = '';
+            appData.certificates.forEach(cert => {
+                container.innerHTML += `
+                    <div class="glass-card p-5 flex flex-col justify-between group">
+                        <div class="flex items-start gap-3">
+                            <div class="text-2xl text-brand-secondary mt-1">
+                                <i class="fa-regular fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white group-hover:text-brand-secondary transition leading-tight">${cert.title}</h4>
+                                <span class="text-[10px] text-gray-500 font-mono block mt-1">${cert.issuer}</span>
+                            </div>
+                        </div>
+                        <button onclick="showToast('cert-dw', 'Preparing PDF download packet...')" class="mt-4 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-brand-primary text-gray-300 hover:text-white font-mono text-[9px] uppercase self-end transition">
+                            <i class="fa-solid fa-download mr-1"></i> Verify Credentials
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        // Render Client Testimonials Slider
+        function renderTestimonials() {
+            const box = document.getElementById('testimonials-box');
+            const item = appData.testimonials[testimonialIndex];
+            
+            box.innerHTML = `
+                <div class="transition-opacity duration-300">
+                    <p class="text-xl md:text-2xl font-heading font-medium italic text-gray-100 max-w-2xl leading-relaxed mb-6">
+                        "${item.quote}"
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <strong class="text-base font-bold text-brand-accent">${item.name}</strong>
+                        <span class="text-xs text-gray-400 font-mono mt-1">${item.role}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function prevTestimonial() {
+            testimonialIndex = (testimonialIndex - 1 + appData.testimonials.length) % appData.testimonials.length;
+            renderTestimonials();
+        }
+
+        function nextTestimonial() {
+            testimonialIndex = (testimonialIndex + 1) % appData.testimonials.length;
+            renderTestimonials();
+        }
+
+        // Render Social Media Directories
+        function renderSocialGrid() {
+            const container = document.getElementById('social-grid-elements');
+            container.innerHTML = `
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-accent/20 border border-white/10 hover:border-brand-accent text-gray-300 hover:text-brand-accent flex items-center justify-center transition hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-primary/20 border border-white/10 hover:border-brand-primary text-gray-300 hover:text-brand-primary flex items-center justify-center transition hover:-translate-y-1">
+                    <i class="fa-brands fa-tiktok text-base"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-secondary/20 border border-white/10 hover:border-brand-secondary text-gray-300 hover:text-brand-secondary flex items-center justify-center transition hover:-translate-y-1">
+                    <i class="fa-brands fa-linkedin-in text-base"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-red-500/20 border border-white/10 hover:border-red-500 text-gray-300 hover:text-red-500 flex items-center justify-center transition hover:-translate-y-1">
+                    <i class="fa-brands fa-youtube text-base"></i>
+                </a>
+            `;
+        }
+
+        // Custom Lightbox and Media Overlay popups
+        function launchVideoModal(url) {
+            const modal = document.getElementById('video-modal');
+            const viewport = document.getElementById('video-modal-viewport');
+            
+            // Build absolute iframe safe container
+            viewport.innerHTML = `
+                <iframe class="w-full h-full" src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            `;
+
+            modal.classList.remove('hidden');
+            // Animate transition
+            gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.3 });
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const viewport = document.getElementById('video-modal-viewport');
+            
+            gsap.to(modal, { opacity: 0, duration: 0.2, onComplete: () => {
+                modal.classList.add('hidden');
+                viewport.innerHTML = ''; // Kill video sound
+            }});
+        }
+
+        function launchLightbox(src) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            gsap.fromTo(img, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3 });
+        }
+
+        function closeLightboxModal() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Secure Form submissions and click counters
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('portfolio-contact-form');
+            const data = new FormData(form);
+
+            // Trigger premium success confetti explosion
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+
+            showToast("form-ok", `Secure handshake sent! Terima kasih ${data.get('client_name')}. Kami akan menghubungi Anda segera.`, "success");
+            form.reset();
+        }
+
+        function downloadCV() {
+            // Simulated increment
+            let count = parseInt(localStorage.getItem('stat_cv') || "0") + 1;
+            localStorage.setItem('stat_cv', count.toString());
+            document.getElementById('cv-counter-badge').textContent = `(${count} downloads)`;
+
+            showToast("cv-dw", "Mengunduh Berkas Portfolio / CV PDF...", "success");
+            
+            // Play success sounds
+            if(audioCtx && isMusicPlaying) {
+                // Synthesize short high notification chime sound
+                const chime = audioCtx.createOscillator();
+                const chimeGain = audioCtx.createGain();
+                chime.frequency.setValueAtTime(880, audioCtx.currentTime); // A5 note
+                chimeGain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                chimeGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+                chime.connect(chimeGain);
+                chimeGain.connect(audioCtx.destination);
+                chime.start();
+                chime.stop(audioCtx.currentTime + 1);
+            }
+        }
+
+        function trackWhatsAppClick() {
+            showToast("wa-track", "Redirecting secure chat connection...", "success");
+        }
+
+        // Command Palette filtering logic
+        function searchAllItems(query) {
+            const resultsPane = document.getElementById('palette-results');
+            resultsPane.innerHTML = '';
+
+            if(!query) {
+                resultsPane.innerHTML = '<span class="text-xs text-gray-500 italic p-2">Type something to search Rana\'s universe...</span>';
+                return;
+            }
+
+            // Simple string scan match
+            const results = [];
+            
+            // Scan Talent
+            appData.talent.forEach(item => {
+                if(item.title.toLowerCase().includes(query.toLowerCase()) || item.category.toLowerCase().includes(query.toLowerCase())) {
+                    results.push({ title: item.title, type: `Talent: ${item.category}`, desc: item.desc, href: '#talent' });
+                }
+            });
+
+            // Scan Bento
+            appData.bento.forEach(item => {
+                if(item.title.toLowerCase().includes(query.toLowerCase()) || item.subtitle.toLowerCase().includes(query.toLowerCase())) {
+                    results.push({ title: item.title, type: "Personality", desc: item.description, href: '#about' });
+                }
+            });
+
+            // Scan Skills
+            appData.skills.forEach(skill => {
+                if(skill.toLowerCase().includes(query.toLowerCase())) {
+                    results.push({ title: skill, type: "Core Competency", desc: "Keahlian profesional yang terverifikasi.", href: '#skills' });
+                }
+            });
+
+            if(results.length === 0) {
+                resultsPane.innerHTML = '<span class="text-xs text-gray-500 italic p-2">No results matched your search query.</span>';
+                return;
+            }
+
+            results.forEach(item => {
+                resultsPane.innerHTML += `
+                    <a href="${item.href}" onclick="closeCommandPalette()" class="p-3 bg-white/5 hover:bg-brand-primary/10 border border-white/5 rounded-xl flex flex-col text-left transition duration-300">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold text-white">${item.title}</span>
+                            <span class="text-[9px] font-mono text-brand-secondary bg-brand-secondary/10 px-2 py-0.5 rounded">${item.type}</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">${item.desc}</p>
+                    </a>
+                `;
+            });
+        }
+
+        function closeCommandPalette() {
+            document.getElementById('command-palette').classList.add('hidden');
+        }
+
+        // Admin Access controls & Konami-style triggers
+        function registerEasterEggListeners() {
+            // Secret Gate Copyright clicks trigger
+            document.getElementById('secret-gate-text').addEventListener('click', () => {
+                secretClicks++;
+                if (secretClicks >= 3) {
+                    secretClicks = 0;
+                    launchAdminLogin();
+                } else {
+                    showToast("gate-click", `Click ${3 - secretClicks} more times to access System Settings...`, "error");
+                }
+            });
+
+            // Keyboard Shortcuts: Ctrl+K for search
+            window.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.key === 'k') {
+                    e.preventDefault();
+                    const palette = document.getElementById('command-palette');
+                    palette.classList.toggle('hidden');
+                    if(!palette.classList.contains('hidden')) {
+                        document.getElementById('palette-search').focus();
+                    }
+                }
+                if (e.key === 'Escape') {
+                    closeCommandPalette();
+                }
+            });
+
+            document.getElementById('search-trigger').addEventListener('click', () => {
+                document.getElementById('command-palette').classList.remove('hidden');
+                document.getElementById('palette-search').focus();
+            });
+
+            document.getElementById('palette-search').addEventListener('input', (e) => {
+                searchAllItems(e.target.value);
+            });
+        }
+
+        function easterEggConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 60,
+                colors: ['#7C5CFF', '#FF4DA6', '#26D9FF']
+            });
+            showToast("easter-confetti", "✨ Awwwards Gold Medal interaction unlocked! ✨");
+        }
+
+        function launchAdminLogin() {
+            document.getElementById('admin-login-modal').classList.remove('hidden');
+            document.getElementById('admin-pass-input').focus();
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('admin-login-modal').classList.add('hidden');
+            document.getElementById('admin-pass-input').value = '';
+        }
+
+        function validateAdminPin() {
+            const input = document.getElementById('admin-pass-input').value;
+            if(input === '2004') {
+                closeAdminLogin();
+                launchAdminDashboard();
+            } else {
+                showToast("login-fail", "Incorrect security PIN. Access denied.", "error");
+            }
+        }
+
+        // Interactive Dashboard logic with LocalStorage saving
+        function launchAdminDashboard() {
+            document.getElementById('admin-dashboard-modal').classList.remove('hidden');
+            switchDashboardTab('hero');
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('admin-dashboard-modal').classList.add('hidden');
+        }
+
+        function switchDashboardTab(tab) {
+            adminTab = tab;
+            
+            // Set Active class to buttons
+            const buttons = document.querySelectorAll('.admin-sidebar-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const contentPane = document.getElementById('dash-content-pane');
+            const title = document.getElementById('dash-panel-title');
+
+            title.textContent = `Edit Section: ${tab}`;
+            contentPane.innerHTML = '';
+
+            if (tab === 'hero') {
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-xl">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Nama Tampilan</label>
+                            <input type="text" id="edit-hero-name" value="${appData.hero.name}" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Tagline (Dipisahkan koma)</label>
+                            <input type="text" id="edit-hero-tags" value="${appData.hero.taglines.join(', ')}" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Teks Pitch Singkat</label>
+                            <textarea id="edit-hero-pitch" rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary resize-none">${appData.hero.about_pitch}</textarea>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Foto Utama URL (Unsplash / Drive)</label>
+                            <input type="text" id="edit-hero-image" value="${appData.hero.hero_image}" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary">
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'about') {
+                let cardsHtml = '';
+                appData.bento.forEach((item, idx) => {
+                    cardsHtml += `
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-3">
+                            <h4 class="text-xs font-bold text-brand-secondary">Card Bento #${idx + 1}</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Title" id="edit-bento-title-${idx}" value="${item.title}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                                <input type="text" placeholder="Subtitle" id="edit-bento-sub-${idx}" value="${item.subtitle}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            </div>
+                            <textarea id="edit-bento-desc-${idx}" class="bg-white/5 border border-white/10 rounded p-2 text-xs text-white resize-none" rows="2">${item.description}</textarea>
+                        </div>
+                    `;
+                });
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <p class="text-xs text-gray-400">Edit isi struktur Bento grid secara presisi.</p>
+                        <div class="flex flex-col gap-4">
+                            ${cardsHtml}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'journey') {
+                let timelineHtml = '';
+                appData.journey.forEach((item, idx) => {
+                    timelineHtml += `
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xs font-bold text-brand-accent">Milestone #${idx + 1}</h4>
+                                <button onclick="deleteJourneyNode(${idx})" class="text-xs text-red-400 hover:text-red-300">Hapus</button>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <input type="text" placeholder="Year" id="edit-journey-year-${idx}" value="${item.year}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white col-span-1">
+                                <input type="text" placeholder="Title" id="edit-journey-title-${idx}" value="${item.title}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white col-span-2">
+                            </div>
+                            <textarea id="edit-journey-desc-${idx}" class="bg-white/5 border border-white/10 rounded p-2 text-xs text-white resize-none" rows="2">${item.desc}</textarea>
+                        </div>
+                    `;
+                });
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs text-gray-400">Atur timeline perjalanan karier Anda.</p>
+                            <button onclick="addNewJourneyNode()" class="px-3 py-1 bg-brand-primary text-white text-xs rounded">Tambah Baru</button>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            ${timelineHtml}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'talent') {
+                let talentHtml = '';
+                appData.talent.forEach((item, idx) => {
+                    talentHtml += `
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xs font-bold text-brand-secondary">Video Project #${idx + 1}</h4>
+                                <button onclick="deleteTalentShowcase(${idx})" class="text-xs text-red-400 hover:text-red-300">Hapus</button>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Title" id="edit-talent-title-${idx}" value="${item.title}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                                <input type="text" placeholder="Category (MC, Host, TikTok)" id="edit-talent-cat-${idx}" value="${item.category}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Embed URL Video (YouTube)" id="edit-talent-video-${idx}" value="${item.video_url}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                                <input type="text" placeholder="Thumbnail Image URL" id="edit-talent-thumb-${idx}" value="${item.thumbnail}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            </div>
+                            <textarea id="edit-talent-desc-${idx}" class="bg-white/5 border border-white/10 rounded p-2 text-xs text-white resize-none" rows="2">${item.desc}</textarea>
+                        </div>
+                    `;
+                });
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs text-gray-400">Atur dan kelola link video performa Anda.</p>
+                            <button onclick="addNewTalent()" class="px-3 py-1 bg-brand-primary text-white text-xs rounded">Tambah Baru</button>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            ${talentHtml}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'projects') {
+                let projHtml = '';
+                appData.projects.forEach((item, idx) => {
+                    projHtml += `
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-3">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Title" id="edit-proj-title-${idx}" value="${item.title}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                                <input type="text" placeholder="Subtitle" id="edit-proj-sub-${idx}" value="${item.subtitle}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            </div>
+                            <input type="text" placeholder="Image URL" id="edit-proj-image-${idx}" value="${item.image}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            <textarea id="edit-proj-desc-${idx}" class="bg-white/5 border border-white/10 rounded p-2 text-xs text-white resize-none" rows="2">${item.desc}</textarea>
+                        </div>
+                    `;
+                });
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <p class="text-xs text-gray-400 font-mono">Kelola 2 kampanye unggulan utama.</p>
+                        <div class="flex flex-col gap-4">
+                            ${projHtml}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'gallery') {
+                let galHtml = '';
+                appData.gallery.forEach((item, idx) => {
+                    galHtml += `
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-xl flex flex-col gap-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xs font-bold text-gray-400">Image #${idx + 1}</h4>
+                                <button onclick="deleteGalleryItem(${idx})" class="text-xs text-red-400 hover:text-red-300">Hapus</button>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Category (onstage, backstage, studio)" id="edit-gal-cat-${idx}" value="${item.category}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                                <input type="text" placeholder="Caption" id="edit-gal-caption-${idx}" value="${item.caption}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                            </div>
+                            <input type="text" placeholder="Source Image URL" id="edit-gal-src-${idx}" value="${item.src}" class="bg-white/5 border border-white/10 rounded px-2 py-1 text-xs text-white">
+                        </div>
+                    `;
+                });
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs text-gray-400">Perbarui gambar visual di Pinterest Grid.</p>
+                            <button onclick="addNewGalleryItem()" class="px-3 py-1 bg-brand-primary text-white text-xs rounded">Tambah Baru</button>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            ${galHtml}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'backup') {
+                contentPane.innerHTML = `
+                    <div class="flex flex-col gap-6 max-w-xl">
+                        <div class="p-5 border border-brand-primary/20 bg-brand-primary/5 rounded-xl flex flex-col gap-3">
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Integrasi Google Apps Script (GAS)</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Website ini siap berjalan di Google Apps Script. Kode backend GAS Anda (Code.gs) dapat membaca dan menulis seluruh model state JSON ini ke dalam file bernama <code class="text-brand-secondary bg-black/40 px-1 py-0.5 rounded font-mono">portfolio.json</code> yang disimpan di Google Drive Anda.</p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-xs font-mono text-gray-400">Export State JSON</label>
+                            <textarea readonly rows="8" class="w-full bg-black/80 border border-white/10 rounded-xl p-4 text-xs font-mono text-brand-secondary focus:outline-none">${JSON.stringify(appData, null, 2)}</textarea>
+                            <span class="text-[10px] text-gray-500">Salin JSON di atas untuk cadangan manual atau diupload ke database.</span>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button onclick="exportJsonBackup()" class="flex-1 py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg text-xs font-bold border border-white/10 uppercase">
+                                Export File JSON
+                            </button>
+                            <button onclick="resetToDefaults()" class="flex-1 py-3 bg-red-600/20 hover:bg-red-600/30 text-red-200 rounded-lg text-xs font-bold border border-red-500/30 uppercase">
+                                Reset Semua Setelan
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Admin Dynamic Item Insertion and deletion routines
+        function addNewJourneyNode() {
+            appData.journey.push({ year: "2026", title: "New Milestone", desc: "Masukan deskripsi peristiwa karir disini." });
+            switchDashboardTab('journey');
+        }
+
+        function deleteJourneyNode(index) {
+            appData.journey.splice(index, 1);
+            switchDashboardTab('journey');
+        }
+
+        function addNewTalent() {
+            appData.talent.push({
+                id: Date.now(),
+                title: "New Talent Showcase Card",
+                category: "MC",
+                video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                thumbnail: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=400",
+                desc: "Masukan deskripsi video promosi Anda disini."
+            });
+            switchDashboardTab('talent');
+        }
+
+        function deleteTalentShowcase(index) {
+            appData.talent.splice(index, 1);
+            switchDashboardTab('talent');
+        }
+
+        function addNewGalleryItem() {
+            appData.gallery.push({
+                id: Date.now(),
+                category: "studio",
+                caption: "New Gallery Caption",
+                src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600"
+            });
+            switchDashboardTab('gallery');
+        }
+
+        function deleteGalleryItem(index) {
+            appData.gallery.splice(index, 1);
+            switchDashboardTab('gallery');
+        }
+
+        // SAVE INTERACTION STATE & RE-RENDER DYNAMIC VIEWPORTS
+        function saveAdminData() {
+            if (adminTab === 'hero') {
+                appData.hero.name = document.getElementById('edit-hero-name').value;
+                appData.hero.about_pitch = document.getElementById('edit-hero-pitch').value;
+                appData.hero.hero_image = document.getElementById('edit-hero-image').value;
+                
+                // Parse tags array
+                const tagsRaw = document.getElementById('edit-hero-tags').value;
+                appData.hero.taglines = tagsRaw.split(',').map(tag => tag.trim());
+            } else if (adminTab === 'about') {
+                appData.bento.forEach((item, idx) => {
+                    item.title = document.getElementById(`edit-bento-title-${idx}`).value;
+                    item.subtitle = document.getElementById(`edit-bento-sub-${idx}`).value;
+                    item.description = document.getElementById(`edit-bento-desc-${idx}`).value;
+                });
+            } else if (adminTab === 'journey') {
+                appData.journey.forEach((item, idx) => {
+                    item.year = document.getElementById(`edit-journey-year-${idx}`).value;
+                    item.title = document.getElementById(`edit-journey-title-${idx}`).value;
+                    item.desc = document.getElementById(`edit-journey-desc-${idx}`).value;
+                });
+            } else if (adminTab === 'talent') {
+                appData.talent.forEach((item, idx) => {
+                    item.title = document.getElementById(`edit-talent-title-${idx}`).value;
+                    item.category = document.getElementById(`edit-talent-cat-${idx}`).value;
+                    item.video_url = document.getElementById(`edit-talent-video-${idx}`).value;
+                    item.thumbnail = document.getElementById(`edit-talent-thumb-${idx}`).value;
+                    item.desc = document.getElementById(`edit-talent-desc-${idx}`).value;
+                });
+            } else if (adminTab === 'projects') {
+                appData.projects.forEach((item, idx) => {
+                    item.title = document.getElementById(`edit-proj-title-${idx}`).value;
+                    item.subtitle = document.getElementById(`edit-proj-sub-${idx}`).value;
+                    item.image = document.getElementById(`edit-proj-image-${idx}`).value;
+                    item.desc = document.getElementById(`edit-proj-desc-${idx}`).value;
+                });
+            } else if (adminTab === 'gallery') {
+                appData.gallery.forEach((item, idx) => {
+                    item.category = document.getElementById(`edit-gal-cat-${idx}`).value;
+                    item.caption = document.getElementById(`edit-gal-caption-${idx}`).value;
+                    item.src = document.getElementById(`edit-gal-src-${idx}`).value;
+                });
+            }
+
+            // Save state permanently inside client browser sandbox
+            localStorage.setItem('rana_portfolio_state_2026', JSON.stringify(appData));
+            
+            // Re-render UI Elements immediately
+            rebuildEntireUI();
+            
+            showToast("save-ok", "Seluruh data telah tersimpan & UI Berhasil Dimutakhirkan!", "success");
+            closeAdminDashboard();
+        }
+
+        function resetToDefaults() {
+            if(confirm("Apakah Anda yakin ingin memulihkan setelan default? Tindakan ini akan menghapus semua input kustom Anda.")) {
+                localStorage.removeItem('rana_portfolio_state_2026');
+                initState();
+                rebuildEntireUI();
+                showToast("reset-ok", "Database default dipulihkan.", "success");
+                closeAdminDashboard();
+            }
+        }
+
+        function exportJsonBackup() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "rana_portfolio_state_2026.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        // Global Rebuilding Interface
+        function rebuildEntireUI() {
+            // Hero section update
+            document.getElementById('hero-name').textContent = appData.hero.name;
+            document.getElementById('hero-img').src = appData.hero.hero_image;
+            document.getElementById('contact-email').href = `mailto:${appData.hero.email}`;
+            document.getElementById('contact-email').textContent = appData.hero.email;
+            document.getElementById('contact-phone').href = `https://wa.me/${appData.hero.whatsapp}`;
+
+            // Secondary layers
+            renderBentoGrid();
+            renderTimeline();
+            renderSkillCloud();
+            renderTalentShowcase();
+            renderTalentFilters();
+            renderProjects();
+            renderGallery();
+            renderExperience();
+            renderCertificates();
+            renderTestimonials();
+            renderSocialGrid();
+        }
+
+        // Startup lifecycle initializer
+        window.addEventListener('DOMContentLoaded', () => {
+            // Load state
+            initState();
+            
+            // Build UI structures
+            rebuildEntireUI();
+
+            // Run system components
+            initSensoryFeatures();
+            initTypingEngine();
+            registerEasterEggListeners();
+
+            // Simulate loader timeline using GSAP
+            let progress = 0;
+            const bar = document.getElementById('loading-bar');
+            const pct = document.getElementById('loading-percentage');
+            
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 5;
+                if(progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Exit splash screen
+                    gsap.to('#splash-screen', {
+                        opacity: 0,
+                        duration: 0.6,
+                        onComplete: () => {
+                            document.getElementById('splash-screen').classList.add('hidden');
+                            
+                            // Trigger Count up statistics animation frames
+                            document.querySelectorAll('.count-up').forEach(item => {
+                                const target = parseInt(item.getAttribute('data-target'));
+                                let count = 0;
+                                const speed = target / 50;
+                                const update = () => {
+                                    count += speed;
+                                    if(count < target) {
+                                        item.textContent = Math.floor(count).toLocaleString('id-ID');
+                                        setTimeout(update, 20);
+                                    } else {
+                                        item.textContent = target.toLocaleString('id-ID') + "+";
+                                    }
+                                };
+                                update();
+                            });
+                        }
+                    });
+                }
+                bar.style.width = progress + "%";
+                pct.textContent = progress + "%";
+            }, 80);
+        });
+    </script>
+</body>
+</html>
